@@ -14,13 +14,13 @@ private:
 public:
 
     void readInput();
-    void printInCell(int index);
-    void printContact();
-    std::string getFirstName();
-    std::string getLastName();
-    std::string getNickName();
-    std::string getPhoneNumber();
-    std::string getSecret();
+    void printInCell(int index) const;
+    void printContact() const;
+    std::string getFirstName() const;
+    std::string getLastName() const;
+    std::string getNickName() const;
+    std::string getPhoneNumber() const;
+    std::string getSecret() const;
 };
 
 #endif

@@ -12,8 +12,8 @@ class PhoneBook {
         PhoneBook();
 
         int addContact();
-        void searchContacts();
-        void askForIndex();
+        void searchContacts() const;
+        void askForIndex() const;
 };
 
 void horizontalBar(int size);

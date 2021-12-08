@@ -18,7 +18,7 @@ int PhoneBook::addContact() {
 	return (0);
 }
 
-void PhoneBook::searchContacts() {
+void PhoneBook::searchContacts() const {
 	horizontalBar(10 * 4 + 4);
 	std::cout << "|" << std::setw(10) << "index";
 	std::cout << "|" << std::setw(10) << "first name";
@@ -31,7 +31,7 @@ void PhoneBook::searchContacts() {
 	}
 }
 
-void PhoneBook::askForIndex() {
+void PhoneBook::askForIndex() const {
 	std::string indexStr;
 	int index = 0;
 	int loop = 0;

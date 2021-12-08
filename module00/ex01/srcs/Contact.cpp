@@ -15,7 +15,7 @@ void Contact::readInput() {
     std::getline(std::cin, secret);
 }
 
-void Contact::printInCell(int index) {
+void Contact::printInCell(int index) const {
     std::cout << "|" << std::setw(10) << index;
     std::cout << "|" << std::setw(10);
     if (firstName.size() > 10)
@@ -35,7 +35,7 @@ void Contact::printInCell(int index) {
     std::cout << "|" << std::endl;
 }
 
-void Contact::printContact() {
+void Contact::printContact() const {
     std::cout << "First name: " << firstName << std::endl;
     std::cout << "Last name: " << lastName << std::endl;
     std::cout << "Nickname: " << nickName << std::endl;
@@ -43,22 +43,22 @@ void Contact::printContact() {
     std::cout << "Darkest secret: " << secret << std::endl;
 }
 
-std::string Contact::getFirstName() {
+std::string Contact::getFirstName() const {
     return firstName;
 }
 
-std::string Contact::getLastName() {
+std::string Contact::getLastName() const {
     return lastName;
 }
 
-std::string Contact::getNickName() {
+std::string Contact::getNickName() const {
     return nickName;
 }
 
-std::string Contact::getPhoneNumber() {
+std::string Contact::getPhoneNumber() const {
     return phoneNumber;
 }
 
-std::string Contact::getSecret() {
+std::string Contact::getSecret() const {
     return secret;
 }
