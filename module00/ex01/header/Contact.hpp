@@ -14,6 +14,8 @@ private:
 public:
 
     void readInput();
+    void printInCell(int index);
+    void printContact();
     std::string getFirstName();
     std::string getLastName();
     std::string getNickName();
@@ -21,4 +23,4 @@ public:
     std::string getSecret();
 };
 
-#endif CONTACT_HPP
+#endif
