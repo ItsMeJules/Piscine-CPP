@@ -11,4 +11,5 @@ int main() {
     stackZombie.announce();
     stackZombie.announce();
     delete heapZombie;
+    return 0;
 }
