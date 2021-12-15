@@ -1,6 +1,9 @@
-#include <iostream>
-#include <string>
-#include <fstream>
+#ifndef NEWREPLACE_HPP
+# define NEWREPLACE_HPP
+
+# include <iostream>
+# include <string>
+# include <fstream>
 
 class NewReplace
 {
@@ -14,3 +17,5 @@ class NewReplace
 
 		void wirteInStream(std::ofstream &ofs);
 };
+
+#endif
