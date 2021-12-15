@@ -8,17 +8,16 @@ Fixed::Fixed(): rawBits_(0) {
 	// std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(int const val): rawBits_(val << fBits) {
+Fixed::Fixed(int const val) : rawBits_(val << fBits) {
 	// std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(float const val): rawBits_(roundf(val * (1 << fBits))) {
+Fixed::Fixed(float const val) : rawBits_(roundf(val * (1 << fBits))) {
 	// std::cout << "Float constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &fixed) {
+Fixed::Fixed(Fixed const &fixed) : rawBits_(fixed.rawBits_) {
 	// std::cout << "Copy constructor called" << std::endl;
-	*this = fixed;
 }
 
 Fixed::~Fixed() {
