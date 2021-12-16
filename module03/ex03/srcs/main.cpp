@@ -1,26 +1,33 @@
 #include <iostream>
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
 
-int main() {
-	ScavTrap	sophie("Sophie");
-	ClapTrap	xavier("Xavier");
-	ScavTrap	norminet("Norminet");
-	FragTrap	emaule("Nicolas");
+#include "DiamondTrap.hpp"
 
-	std::string	student = "student";
+int main(void)
+{
+	DiamondTrap	jon("Jon Snow");
+	std::cout << "-----------------------------" << std::endl;
+	DiamondTrap	night_k("Night King");
+	std::cout << "-----------------------------" << std::endl;
+	DiamondTrap	jon_bis(jon);
+	std::cout << "-----------------------------" << std::endl;
+	DiamondTrap arya;
+	std::cout << "--------------[FUNCS]---------------" << std::endl;
 
-	std::cout << std::endl;
+	jon.whoAmI();
+	night_k.whoAmI();
+	jon_bis.whoAmI();
+	jon.highFivesGuys();
+	night_k.attack("jon");
+	jon_bis.takeDamage(40);
+	night_k.attack("jon");
+	jon_bis.takeDamage(25);
+	night_k.guardGate();
+	arya.whoAmI();
 
-	sophie.attack(student);
-	xavier.takeDamage(15);
-	norminet.beRepaired(10);
-	emaule.attack("Piscineux");
-	sophie.guardGate();
-	norminet.guardGate();
-	emaule.highFivesGuys();
+	std::cout << "-----------------------------" << std::endl;
+	arya = jon;
+	std::cout << "-----------------------------" << std::endl;
 
-	std::cout << std::endl;
-	return 1;
+	arya.whoAmI();
+	return 0;
 }

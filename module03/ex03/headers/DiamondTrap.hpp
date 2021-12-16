@@ -15,7 +15,14 @@ class DiamondTrap : public FragTrap, public ScavTrap {
 		DiamondTrap(DiamondTrap const &diamondTrap);
 		~DiamondTrap();
 
+		using FragTrap::hitPoints_;
+		using ScavTrap::energyPoints_;
+		using FragTrap::attackDamage_;
+		using ScavTrap::attack;
 
+		void whoAmI() const;
+
+		std::string getName() const;	
 
 		DiamondTrap &operator=(DiamondTrap const &rhs);
 };

@@ -1,6 +1,6 @@
-NAME		=	clap
+NAME		=	diamond
 CC			=	clang++
-CFLAGS		=	-fsanitize=address -g -std=c++98 -Wall -Wextra -Werror
+CFLAGS		=	-fsanitize=address -g -std=c++98 -Wall -Wextra -Werror -Wshadow -Wno-shadow
 RM			=	rm -rf
 SRC_DIR 	= 	srcs
 SRC		 	=	$(notdir $(shell find $(SRC_DIR) -type f -name "*.cpp"))
