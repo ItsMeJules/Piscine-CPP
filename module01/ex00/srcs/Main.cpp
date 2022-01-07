@@ -9,7 +9,8 @@ int main() {
     Zombie* heapZombie = newZombie("MarcHeap");
 
     stackZombie.announce();
-    stackZombie.announce();
+    heapZombie->announce();
+    randomChump("RobertRandom");
     delete heapZombie;
     return 0;
 }
