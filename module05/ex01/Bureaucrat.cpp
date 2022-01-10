@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : name_("Default"), grade_(150) {}
 
@@ -26,6 +27,11 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs) {
 }
 
 Bureaucrat::~Bureaucrat() {}
+
+void Bureaucrat::signForm(Form &form) {
+    if (grade_ <= form.getSignGrade())
+        form.beSigned(*this);
+}
 
 std::string const Bureaucrat::getName() const {
     return name_;

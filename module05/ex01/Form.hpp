@@ -13,6 +13,8 @@ class Form {
         unsigned int const execGrade_;
     public:
         Form();
+        Form(std::string const name, unsigned int const signGrade, unsigned const execGrade);
+        Form(Form const &form);
         ~Form();
 
         void beSigned(Bureaucrat const &bur);
