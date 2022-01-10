@@ -1,37 +1,31 @@
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main() {
-    Bureaucrat defaultBur;
     Bureaucrat one("Johnson", 1);
     Bureaucrat fifty("Mary", 50);
+    Form defaultForm;
+    Form form("APL", 10, 10);
 
-    std::cout << defaultBur << std::endl;
-    std::cout << one << std::endl;
-    std::cout << fifty << std::endl;
-
-    for (int i = 0; i < 10; i++) {
-        one.lowerGrade();
-        fifty.raiseGrade();
-    }
+    std::cout << defaultForm << std::endl;
+    std::cout << form << std::endl;
 
     std::cout << std::endl;
 
-    std::cout << defaultBur << std::endl;
-    std::cout << one << std::endl;
-    std::cout << fifty << std::endl;
-
     try {
-        Bureaucrat invalidHigh("InvalidHigh", 0);
-    } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
+        std::cout << "Is form signed: " << form.isSigned() << std::endl;
+        form.beSigned(one);
+        std::cout << "Is form signed: " << form.isSigned() << std::endl;
+        form.beSigned(fifty);
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << '\n';
     }
 
-    try {
-        Bureaucrat invalidLow("InvalidLow", 151);
-    } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
+    std::cout << std::endl;
+    
+    fifty.signForm(form);
+    one.signForm(form);
     return 1;
 }

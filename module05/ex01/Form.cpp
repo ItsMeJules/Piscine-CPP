@@ -43,11 +43,11 @@ bool Form::isSigned() const {
     return sign_;
 }
 
-unsigned int const Form::getSignGrade() const {
+unsigned int Form::getSignGrade() const {
     return signGrade_;
 }
 
-unsigned int const Form::getExecGrade() const {
+unsigned int Form::getExecGrade() const {
     return execGrade_;
 }
 

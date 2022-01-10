@@ -21,8 +21,8 @@ class Form {
 
         std::string const getName() const;
         bool isSigned() const;
-        unsigned int const getSignGrade() const;
-        unsigned int const getExecGrade() const;
+        unsigned int getSignGrade() const;
+        unsigned int getExecGrade() const;
 
         class GradeTooLowException : public std::exception {
             virtual const char *what() const throw();
@@ -33,6 +33,6 @@ class Form {
         };
 };
 
-std::ostream &operator<<(std::ostream &os, Bureaucrat const &rhs);
+std::ostream &operator<<(std::ostream &os, Form const &rhs);
 
 #endif

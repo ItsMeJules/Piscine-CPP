@@ -29,8 +29,11 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs) {
 Bureaucrat::~Bureaucrat() {}
 
 void Bureaucrat::signForm(Form &form) {
-    if (grade_ <= form.getSignGrade())
+    if (grade_ <= form.getSignGrade()) {
         form.beSigned(*this);
+        std::cout << name_ << " signs " << form.getName() << std::endl;
+    } else 
+        std::cout << name_ << " cannot sign because their rank is too low!" << std::endl;
 }
 
 std::string const Bureaucrat::getName() const {
