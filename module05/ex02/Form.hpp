@@ -18,6 +18,8 @@ class Form {
         ~Form();
 
         void beSigned(Bureaucrat const &bur);
+        void checkExecute(Bureaucrat &bur);
+        virtual void execute(Bureaucrat &bur) const = 0;
 
         std::string const getName() const;
         bool isSigned() const;
@@ -31,6 +33,10 @@ class Form {
         };
 
         class GradeTooHighException : public std::exception {
+            virtual const char *what() const throw();
+        };
+
+        class FormNotSignedException : public std::exception {
             virtual const char *what() const throw();
         };
 };
