@@ -17,6 +17,7 @@ class Bureaucrat {
         ~Bureaucrat();
 
         void signForm(Form &form);
+        void executeForm(Form &form);
 
         std::string const getName() const;
         unsigned int getGrade() const;

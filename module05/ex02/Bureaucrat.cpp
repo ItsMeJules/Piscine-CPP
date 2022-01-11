@@ -29,6 +29,15 @@ void Bureaucrat::signForm(Form &form) {
         std::cout << name_ << " cannot sign because their rank is too low!" << std::endl;
 }
 
+void Bureaucrat::executeForm(Form &form) {
+    if (!form.isSigned())
+        throw new Form::FormNotSignedException();
+    if (grade_ <= form.getExecGrade()) {
+        form.execute(*this);
+    } else
+        throw Bureaucrat::GradeTooLowException();
+}
+
 std::string const Bureaucrat::getName() const {
     return name_;
 }

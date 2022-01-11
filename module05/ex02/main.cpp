@@ -2,11 +2,14 @@
 #include <string>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp
+#include "ShrubberyCreationForm.hpp"
 
 int main() {
     Bureaucrat one("Johnson", 1);
     Bureaucrat fifty("Mary", 50);
-    Form defaultForm;
+    PresidentialPardonForm defaultForm; //a changer
     Form form("APL", 10, 10);
 
     std::cout << defaultForm << std::endl;
