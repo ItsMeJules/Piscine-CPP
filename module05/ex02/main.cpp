@@ -3,32 +3,35 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp
+#include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
 int main() {
     Bureaucrat one("Johnson", 1);
-    Bureaucrat fifty("Mary", 50);
-    PresidentialPardonForm defaultForm; //a changer
-    Form form("APL", 10, 10);
-
-    std::cout << defaultForm << std::endl;
-    std::cout << form << std::endl;
-
-    std::cout << std::endl;
+    Bureaucrat fifty("Mary", 100);
+    Form *presForm = new PresidentialPardonForm();
+    RobotomyRequestForm robotForm;
+    ShrubberyCreationForm shrubForm;
 
     try {
-        std::cout << "Is form signed: " << form.isSigned() << std::endl;
-        form.beSigned(one);
-        std::cout << "Is form signed: " << form.isSigned() << std::endl;
-        form.beSigned(fifty);
+        presForm->beSigned(one);
+        robotForm.beSigned(one);
+        shrubForm.beSigned(one);
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 
+    std::cout << *presForm << std::endl;
+    std::cout << robotForm << std::endl;
+    std::cout << shrubForm << std::endl;
     std::cout << std::endl;
-    
-    fifty.signForm(form);
-    one.signForm(form);
+
+    presForm->execute(fifty);
+
+    presForm->execute(one);
+    one.executeForm(robotForm);
+    shrubForm.execute(one);
+
+    delete presForm;
     return 1;
 }

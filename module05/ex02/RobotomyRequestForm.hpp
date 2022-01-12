@@ -1,5 +1,5 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOROMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
 # include <string>
@@ -10,7 +10,7 @@ class RobotomyRequestForm : public Form {
 		std::string target_;
 	public:
 		RobotomyRequestForm();
-		RobotomyRequestForm(std::string name);
+		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(RobotomyRequestForm const &rrForm);
 		~RobotomyRequestForm();
         

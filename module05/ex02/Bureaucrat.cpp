@@ -22,10 +22,12 @@ Bureaucrat::Bureaucrat(Bureaucrat const &bureaucrat) {
 Bureaucrat::~Bureaucrat() {}
 
 void Bureaucrat::signForm(Form &form) {
-    if (grade_ <= form.getSignGrade()) {
+    if (form.isSigned())
+        std::cout << "Form is already signed!" << std::endl;
+    else if (grade_ <= form.getSignGrade()) {
         form.beSigned(*this);
         std::cout << name_ << " signs " << form.getName() << std::endl;
-    } else 
+    } else
         std::cout << name_ << " cannot sign because their rank is too low!" << std::endl;
 }
 
@@ -34,6 +36,7 @@ void Bureaucrat::executeForm(Form &form) {
         throw new Form::FormNotSignedException();
     if (grade_ <= form.getExecGrade()) {
         form.execute(*this);
+        std::cout << name_ << " executes " << form.getName() << std::endl;
     } else
         throw Bureaucrat::GradeTooLowException();
 }

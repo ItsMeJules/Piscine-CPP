@@ -1,13 +1,14 @@
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 72, 45), target_("Default") {}
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137), target_("Default") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-	: Form("ShrubberyCreationForm", 72, 45),
+	: Form("ShrubberyCreationForm", 145, 137),
 	  target_(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &ppForm)
-	: Form("ShrubberyCreationForm", 72, 45),
+	: Form("ShrubberyCreationForm", 145, 137),
 	  target_(ppForm.target_) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
@@ -23,6 +24,40 @@ void ShrubberyCreationForm::execute(Bureaucrat &bur) const {
 		std::cerr << e.what() << '\n';
 		return;
 	}
+	std::ofstream ofs(std::string(target_ + "_shrubbery").c_str());
+
+	if (ofs.is_open()) {
+		ofs << "                                                         ." << std::endl;
+        ofs << "                                      .         ;  " << std::endl;
+        ofs << "         .              .              ;%     ;;   " << std::endl;
+        ofs << "           ,           ,                :;%  %;   " << std::endl;
+        ofs << "            :         ;                   :;%;'     .,   " << std::endl;
+        ofs << "   ,.        %;     %;            ;        %;'    ,;" << std::endl;
+        ofs << "     ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl;
+        ofs << "      %;       %;%;      ,  ;       %;  ;%;   ,%;' " << std::endl;
+        ofs << "       ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
+        ofs << "        `%;.     ;%;     %;'         `;%%;.%;'" << std::endl;
+        ofs << "         `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl;
+        ofs << "            `:%;.  :;bd%;          %;@%;'" << std::endl;
+        ofs << "              `@%:.  :;%.         ;@@%;'   " << std::endl;
+        ofs << "                `@%.  `;@%.      ;@@%;         " << std::endl;
+        ofs << "                  `@%%. `@%%    ;@@%;        " << std::endl;
+        ofs << "                    ;@%. :@%%  %@@%;       " << std::endl;
+        ofs << "                      %@bd%%%bd%%:;     " << std::endl;
+        ofs << "                        #@%%%%%:;;" << std::endl;
+        ofs << "                        %@@%%%::;" << std::endl;
+        ofs << "                        %@@@%(o);  . '         " << std::endl;
+        ofs << "                        %@@@o%;:(.,'         " << std::endl;
+        ofs << "                    `.. %@@@o%::;         " << std::endl;
+        ofs << "                      `)@@@o%::;         " << std::endl;
+        ofs << "                        %@@(o)::;        " << std::endl;
+        ofs << "                       .%@@@@%::;         " << std::endl;
+        ofs << "                       ;%@@@@%::;.          " << std::endl;
+        ofs << "                      ;%@@@@%%:;;;. " << std::endl;
+        ofs << "                  ...;%@@@@@%%:;;;;,.." << std::endl;
+		ofs << "" << std::endl;
+	} else
+		std::cerr << "Failed to open the file " << target_ << "_shrubbery" << std::endl;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {

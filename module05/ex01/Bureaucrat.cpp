@@ -22,6 +22,8 @@ Bureaucrat::Bureaucrat(Bureaucrat const &bureaucrat) {
 Bureaucrat::~Bureaucrat() {}
 
 void Bureaucrat::signForm(Form &form) {
+    if (form.isSigned())
+        std::cout << "Form is already signed!" << std::endl;
     if (grade_ <= form.getSignGrade()) {
         form.beSigned(*this);
         std::cout << name_ << " signs " << form.getName() << std::endl;

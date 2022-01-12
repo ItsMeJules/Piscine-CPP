@@ -35,11 +35,13 @@ void Form::beSigned(Bureaucrat const &bur) {
         throw Form::GradeTooLowException();
 }
 
-void Form::checkExecute(Bureaucrat &bur) {
-    if (bur.getGrade() > signGrade_)
-        throw Form::GradeTooLowException();
-    else if (!sign_)
+void Form::checkExecute(Bureaucrat &bur) const {
+    if (!sign_)
         throw Form::FormNotSignedException();
+    else if (bur.getGrade() > signGrade_ && !sign_)
+        throw Form::GradeTooLowException();
+    else if (bur.getGrade() > execGrade_)
+        throw Form::FormCantBeExecutedException();
 }
 
 std::string const Form::getName() const {
@@ -75,6 +77,10 @@ const char *Form::GradeTooHighException::what() const throw() {
 
 const char *Form::FormNotSignedException::what() const throw() {
     return "The form is not signed then it cannot be executed!";
+}
+
+const char *Form::FormCantBeExecutedException::what() const throw() {
+    return "This bureaucrat cannot execute this form!";
 }
 
 std::ostream &operator<<(std::ostream &os, Form const &rhs) {

@@ -15,10 +15,10 @@ class Form {
         Form();
         Form(std::string const name, unsigned int const signGrade, unsigned const execGrade);
         Form(Form const &form);
-        ~Form();
+        virtual ~Form();
 
         void beSigned(Bureaucrat const &bur);
-        void checkExecute(Bureaucrat &bur);
+        void checkExecute(Bureaucrat &bur) const;
         virtual void execute(Bureaucrat &bur) const = 0;
 
         std::string const getName() const;
@@ -37,6 +37,10 @@ class Form {
         };
 
         class FormNotSignedException : public std::exception {
+            virtual const char *what() const throw();
+        };
+
+        class FormCantBeExecutedException : public std::exception {
             virtual const char *what() const throw();
         };
 };
