@@ -2,19 +2,11 @@
 #include <ClapTrap.hpp>
 
 ClapTrap::ClapTrap()
-	: name_("default")
+	: name_("default"),
 	  hitPoints_(10),
 	  energyPoints_(10),
 	  attackDamage_(0) {
-	std::cout << "[" + name + "]> Finally... I am summoned by default!" << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string name)
-	: name_(name),
-	  hitPoints_(10),
-	  energyPoints_(10),
-	  attackDamage_(0) {
-	std::cout << "[" + name + "]> Finally... I am summoned!" << std::endl;
+	std::cout << "[" + name_ + "]> Finally... I am summoned by default!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
