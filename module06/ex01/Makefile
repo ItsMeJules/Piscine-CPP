@@ -1,4 +1,4 @@
-NAME		=	convert	
+NAME		=	serialize	
 CC			=	clang++
 CFLAGS		=	-fsanitize=address -g -std=c++98 -Wall -Wextra -Werror
 RM			=	rm -rf
