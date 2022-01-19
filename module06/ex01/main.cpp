@@ -42,5 +42,6 @@ int main() {
 	std::cout << std::endl;
 	std::cout << "Address of deserializedDataPtr " << &deserializedDataPtr << std::endl;
 	std::cout << "Address of uPtr " << &uPtr << std::endl;
+	delete dataPtr;
 	return 1;
 }
