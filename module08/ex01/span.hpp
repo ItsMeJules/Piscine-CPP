@@ -7,7 +7,7 @@
 class span {
     private:
         unsigned int size_;
-        std::vector<int> vector;
+        std::vector<int> vector_;
     public:
         span();
         span(unsigned int N);
@@ -16,8 +16,8 @@ class span {
 
         void addNumber(int n);
         void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator);
-        int shortestSpan() const;
-        int longestSpan() const;
+        unsigned int shortestSpan() const;
+       unsigned  int longestSpan() const;
 
         unsigned int getSize() const;
         std::vector<int> const &getVector() const;
